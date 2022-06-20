@@ -32,7 +32,7 @@ services:
           - node.role == manager
       labels:
         - 'traefik.enable=true'
-        - 'traefik.http.routers.portainer.rule=Host(`portainer.milab.es`)'
+        - 'traefik.http.routers.portainer.rule=Host(`portainer.aunoa.lab`)'
         - 'traefik.http.routers.portainer.entrypoints=web'
         - 'traefik.http.services.portainer.loadbalancer.server.port=9000'
 
