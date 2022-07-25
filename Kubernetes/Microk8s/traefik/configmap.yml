@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: traefik
+  labels:
+    app: traefik
+data:
+  traefik.toml: |
+    [entrypoints]
+      [entrypoints.web]
+        address = ":80"
+      [entrypoints.websecure]
+        address = ":443"
+
+    [api]
+      dashboard = true
+      insecure = true
+
+    [providers]
+      [providers.kubernetesCRD]
+  
+      [providers.file]
+       filename = "/etc/traefik/dyn.toml"
+       watch = true    
+  dyn.toml: |
+    [http.services]
+      [http.services.my-service]
+        [http.services.my-service.loadBalancer.sticky.cookie]
+          name = "galleta"
+          secure = true
+          httpOnly = true
+          sameSite = "none"
