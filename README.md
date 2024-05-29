@@ -72,6 +72,10 @@ The domain have to be exactly in hosts file and portainer.yml:31
 
 ## Usage
 
+### Local
+Go to http://portainer.mylab.com 
+
+### Cloud server
 Go to https://portainer.mylab.com (or your domain setted in portainer.yml) to try it!
 
 ## Bonus extra
