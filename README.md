@@ -1,9 +1,9 @@
-# [Docker Swarm + Traefik for developers](https://github.com/agosalvez/devops-for-developers)
+# [Docker Swarm + Traefik for developers](https://github.com/agosalvez/easy-devops)
 
-[![GitHub last commit](https://img.shields.io/github/last-commit/agosalvez/devops-for-developers.svg)](https://github.com/agosalvez/devops-for-developers/commits/main)
-![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/t/agosalvez/devops-for-developers)
-![GitHub contributors](https://img.shields.io/github/contributors/agosalvez/devops-for-developers)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/agosalvez/devops-for-developers)
+[![GitHub last commit](https://img.shields.io/github/last-commit/agosalvez/easy-devops.svg)](https://github.com/agosalvez/easy-devops/commits/main)
+![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/t/agosalvez/easy-devops)
+![GitHub contributors](https://img.shields.io/github/contributors/agosalvez/easy-devops)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/agosalvez/easy-devops)
 
 With this cluster you can deploy in your localhost or your cloud server a Docker Swarm to develop or you can test a Docker-based ecosystem of applications for you.
 It is not recommended to use for production environments.
@@ -26,59 +26,82 @@ OPTIONAL: If you have more than 1 node, click [here](https://docs.docker.com/eng
 ### Clone repository and choose protocol: http or https, in this example we will use https
 
 ```
-git clone https://github.com/agosalvez/devops-for-developers.git
+git clone https://github.com/agosalvez/easy-devops.git
 ```
 
+Local:
 ```
-cd devops-for-developers/swarm/https
+cd easy-devops/swarm/http
 ```
+Cloud server:
+```
+cd easy-devops/swarm/https
+```
+### Edit for Let's Encrypt (only https mode)
 
-### Edit for Let's Encrypt (https mode)
-
-- traefik.yml:14 => Set your email
+- traefik.yml:14 => Set your own email for letsencrypt
 
 ### Deploy cluster
 
 Next script will create a pair of docker networks and deploy the traefik and portainer stacks:
 
+Windows
 ```
-./initCluster.sh
+./win/initCluster.bat
+```
+Unix
+```
+./unix/initCluster.sh
 ```
 
-#### Local => /etc/hosts
+### Local
 
-Modify if you want portainer.yml:31 with your domain
+#### /etc/hosts
+
+Modify portainer.yml:31 with your desired domain (your own domain if you are in a server)
 
 ```
 # Add the following line (or your domain) to the end of the /etc/hosts file:
 127.0.0.1   portainer.mylab.com
 ```
+The domain have to be exactly in hosts file and portainer.yml:31 
 
-#### Cloud server
+### Cloud server
 
-- Redirect you desired domain to your server public IP and configure right labels in stack yaml
+- Redirect you desired domain to your server public IP and configure right labels in portainer.yml:31
 
 ## Usage
 
-Go to https://portainer.mylab.com to try it!
+Go to https://portainer.mylab.com (or your domain setted in portainer.yml) to try it!
 
 ## Bonus extra
 
 After that, you can start and stop this cluster with these scripts:
 
+### Start cluster
+
+Windows
 ```
-./startCluster.sh
+./win/startCluster.bat
+```
+Unix
+```
+./unix/startCluster.sh
+```
+### Stop cluster
+
+Windows
+```
+./win/stopCluster.bat
+```
+Unix
+```
+./unix/stopCluster.sh
 ```
 
-or
+## Authors
 
-```
-./stopCluster.sh
-```
-
-## Acknowledgements
-
-- Author: [Adrián Gosálvez](https://github.com/agosalvez)
+- Main author: [Adrián Gosálvez](https://github.com/agosalvez)
 - Collaborator: [Javier Pérez](https://github.com/jaweewo)
 
 ## Documentation
@@ -90,5 +113,3 @@ or
 ## Other features
 
 [Kubernetes - Microk8s](https://github.com/agosalvez/Devops/tree/main/Kubernetes/Microk8s)
-
-### If you want to know more, let me know!
