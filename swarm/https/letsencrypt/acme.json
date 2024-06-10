@@ -1,12 +1,12 @@
 {
   "myresolver": {
     "Account": {
-      "Email": "magicadry@gmail.com",
+      "Email": "YOUR-EMAIL@YA.COM",
       "Registration": {
         "body": {
           "status": "valid",
           "contact": [
-            "mailto:magicadry@gmail.com"
+            "mailto:YOUR-EMAIL@YA.COM"
           ]
         },
         "uri": "https://acme-v02.api.letsencrypt.org/acme/acct/1753518732"
