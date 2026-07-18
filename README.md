@@ -148,11 +148,40 @@ Never commit `.env`, ACME state, certificates, backups, or logs. Read [SECURITY.
 
 ## Project status
 
-The project is being rebuilt for v1.0 on `feature/easy-installers`. Windows 11 and clean Ubuntu 22.04/24.04 acceptance tests are required before the release is merged into `main`.
+The v1 candidate is available on `main`. Windows 11 and clean Ubuntu
+22.04/24.04 acceptance tests must pass before publishing the `v1.0.0` release.
+
+## Contributing
+
+Contributions are welcome. Fork the repository, create a focused branch, make
+your changes, run the available checks, and open a pull request:
+
+```bash
+git clone https://github.com/YOUR_GITHUB_USER/easy-devops.git
+cd easy-devops
+git remote add upstream https://github.com/agosalvez/easy-devops.git
+git switch -c feature/short-description
+
+# Make and validate your changes.
+git diff --check
+
+git add <changed-files>
+git commit -m "feat(scope): describe the change"
+git push -u origin feature/short-description
+```
+
+Then open a pull request from your fork to `agosalvez/easy-devops:main`.
+Keep each pull request focused, document how it was tested, use English commit
+messages, and never include credentials or generated runtime files. Read the
+full [contribution guide](CONTRIBUTING.md) and [security policy](SECURITY.md).
 
 ## Author
 
-Created and maintained by [Adrián Gosálvez](https://github.com/agosalvez).
+Created and maintained by [Adrián Gosálvez](https://adrian.gosalvez.es).
+
+- [Professional website and CV](https://adrian.gosalvez.es)
+- [LinkedIn](https://www.linkedin.com/in/adriangosalvez/)
+- [GitHub](https://github.com/agosalvez)
 
 ## License
 

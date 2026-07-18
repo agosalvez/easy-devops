@@ -113,11 +113,42 @@ El socket de Docker concede mucho control sobre el host. Solo administradores de
 
 ## Estado
 
-La versión v1.0 se desarrolla en `feature/easy-installers`. Antes de fusionarse en `main` requiere pruebas limpias en Windows 11, Ubuntu 22.04 y Ubuntu 24.04.
+La candidata a v1 ya está disponible en `main`. Antes de publicar la release
+`v1.0.0` debe superar las pruebas de aceptación en Windows 11 y en instalaciones
+limpias de Ubuntu 22.04/24.04.
+
+## Contribuir
+
+Las contribuciones son bienvenidas. Haz un fork, crea una rama centrada en un
+único cambio, valida el resultado y abre una pull request:
+
+```bash
+git clone https://github.com/TU_USUARIO_GITHUB/easy-devops.git
+cd easy-devops
+git remote add upstream https://github.com/agosalvez/easy-devops.git
+git switch -c feature/descripcion-corta
+
+# Realiza y valida los cambios.
+git diff --check
+
+git add <archivos-modificados>
+git commit -m "feat(scope): describe the change"
+git push -u origin feature/descripcion-corta
+```
+
+Después abre una pull request desde tu fork hacia
+`agosalvez/easy-devops:main`. Mantén cada PR enfocada, explica cómo la has
+probado, escribe los commits en inglés y nunca incluyas credenciales o datos
+generados. Consulta la [guía de contribución](CONTRIBUTING.md) y la
+[política de seguridad](SECURITY.md).
 
 ## Autor
 
-Creado y mantenido por [Adrián Gosálvez](https://github.com/agosalvez).
+Creado y mantenido por [Adrián Gosálvez](https://adrian.gosalvez.es).
+
+- [Web profesional y CV](https://adrian.gosalvez.es)
+- [LinkedIn](https://www.linkedin.com/in/adriangosalvez/)
+- [GitHub](https://github.com/agosalvez)
 
 ## Licencia
 
