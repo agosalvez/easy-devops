@@ -26,4 +26,3 @@ switch ($Action) {
         if ((Read-Host 'Remove Easy DevOps stacks but keep data? [y/N]') -match '^[Yy]$') { & $PSCommandPath stop }
     }
 }
-

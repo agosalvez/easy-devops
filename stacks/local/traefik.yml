@@ -22,4 +22,3 @@ networks:
   proxy:
     name: easy-devops-proxy
     external: true
-

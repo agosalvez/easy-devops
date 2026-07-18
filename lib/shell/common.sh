@@ -18,4 +18,3 @@ confirm() {
   read -r -p "$1 [y/N] " answer
   [[ "$answer" =~ ^[Yy]$ ]]
 }
-

@@ -46,4 +46,3 @@ chmod 600 "$ROOT/.env"
 $DOCKER stack deploy -c "$ROOT/stacks/server/traefik.yml" easy-devops-traefik
 $DOCKER stack deploy -c "$ROOT/stacks/server/portainer.yml" easy-devops-portainer
 log_success "Deployment submitted. Open https://$DOMAIN after certificate issuance."
-

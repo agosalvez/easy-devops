@@ -48,4 +48,3 @@ jobs:
           }
       - name: Check whitespace
         run: git diff --check HEAD^ HEAD
-

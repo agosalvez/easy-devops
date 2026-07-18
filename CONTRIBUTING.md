@@ -11,4 +11,3 @@ Thank you for improving Easy DevOps.
 
 Never include credentials, private keys, generated environment files, ACME data,
 logs, or backups. Security reports must follow [SECURITY.md](SECURITY.md).
-

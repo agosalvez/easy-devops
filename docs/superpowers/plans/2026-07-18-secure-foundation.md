@@ -499,4 +499,3 @@ git commit -m "refactor(repo): remove superseded legacy deployments"
 Verify `git log --oneline main..HEAD` contains focused English commits, the worktree is clean, commit metadata contains neither Codex nor co-author attribution, and all foundation success criteria from the design are satisfied.
 
 Expected: the secure foundation is independently reviewable and ready for the Ubuntu local implementation plan.
-

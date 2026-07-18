@@ -39,4 +39,3 @@ $DOCKER stack deploy -c "$ROOT/stacks/local/portainer.yml" easy-devops-portainer
 log_success "Deployment submitted."
 log_info "Wait about one minute, then open http://portainer.localhost"
 log_info "Check status with: ./scripts/linux/manage.sh status"
-

@@ -41,4 +41,3 @@ case "${1:-status}" in
     ;;
   *) echo "Usage: $0 {status|start|stop|backup|update|uninstall}" >&2; exit 2 ;;
 esac
-

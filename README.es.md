@@ -109,4 +109,3 @@ Creado y mantenido por [Adrián Gosálvez](https://github.com/agosalvez).
 ## Licencia
 
 MIT
-

@@ -15,4 +15,3 @@ function Assert-CommandAvailable {
 }
 function Protect-LogValue { param([string]$Value) if ($Value) { '[REDACTED]' } else { '' } }
 Export-ModuleMember -Function Write-StepInfo,Write-StepSuccess,Write-StepError,Test-CommandAvailable,Assert-CommandAvailable,Protect-LogValue,New-EasyDevOpsError
-

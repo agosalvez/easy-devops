@@ -30,4 +30,3 @@ $env:EASY_DEVOPS_DOMAIN = 'portainer.localhost'
 docker stack deploy -c "$Root/stacks/local/traefik.yml" easy-devops-traefik
 docker stack deploy -c "$Root/stacks/local/portainer.yml" easy-devops-portainer
 Write-StepSuccess 'Deployment submitted. Open http://portainer.localhost in about one minute.'
-

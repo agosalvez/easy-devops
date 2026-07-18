@@ -19,4 +19,3 @@ and Semantic Versioning.
 
 - Removed tracked ACME runtime data.
 - Disabled public Portainer port 9000 and the insecure Traefik dashboard in server mode.
-
