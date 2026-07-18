@@ -1,0 +1,51 @@
+name: Quality
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Detect secrets
+        uses: gitleaks/gitleaks-action@v2
+      - name: Validate shell syntax
+        run: bash -n installers/*.sh scripts/linux/*.sh lib/shell/*.sh tests/repository/*.sh
+      - name: Validate tracked files
+        run: bash tests/repository/no-secrets.sh
+      - name: Validate stack manifests
+        env:
+          TRAEFIK_IMAGE: traefik:v3.7
+          PORTAINER_IMAGE: portainer/portainer-ce:lts
+          PORTAINER_AGENT_IMAGE: portainer/agent:lts
+          EASY_DEVOPS_DOMAIN: portainer.example.test
+          EASY_DEVOPS_ACME_EMAIL: admin@example.test
+        run: |
+          docker stack config -c stacks/local/traefik.yml >/dev/null
+          docker stack config -c stacks/local/portainer.yml >/dev/null
+          docker stack config -c stacks/server/traefik.yml >/dev/null
+          docker stack config -c stacks/server/portainer.yml >/dev/null
+      - name: Validate PowerShell syntax
+        shell: pwsh
+        run: |
+          $files = Get-ChildItem installers,scripts,lib -Recurse -Include *.ps1,*.psm1
+          foreach ($file in $files) {
+            $tokens = $null
+            $errors = $null
+            [Management.Automation.Language.Parser]::ParseFile(
+              $file.FullName,
+              [ref]$tokens,
+              [ref]$errors
+            ) | Out-Null
+            if ($errors) { throw ($errors -join [Environment]::NewLine) }
+          }
+      - name: Check whitespace
+        run: git diff --check HEAD^ HEAD
+
