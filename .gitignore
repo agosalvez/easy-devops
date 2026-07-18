@@ -1,1 +1,14 @@
 backup_composes/
+.env
+.env.*
+!.env.example
+runtime/
+logs/
+backups/
+coverage/
+TestResults/
+*.pem
+*.key
+acme.json
+.idea/
+.vscode/

@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  traefik:
+    image: ${TRAEFIK_IMAGE}
+    command:
+      - --providers.swarm=true
+      - --providers.swarm.exposedbydefault=false
+      - --providers.swarm.network=easy-devops-proxy
+      - --entrypoints.web.address=:80
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+        mode: host
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks: [proxy]
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+networks:
+  proxy:
+    name: easy-devops-proxy
+    external: true
+
