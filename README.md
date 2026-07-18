@@ -1,5 +1,9 @@
 # Easy DevOps
 
+[![Quality](https://github.com/agosalvez/easy-devops/actions/workflows/quality.yml/badge.svg)](https://github.com/agosalvez/easy-devops/actions/workflows/quality.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Docker Swarm](https://img.shields.io/badge/Docker-Swarm-2496ED?logo=docker&logoColor=white)](https://docs.docker.com/engine/swarm/)
+
 > Build a local or self-hosted Docker Swarm with Traefik and Portainer through a transparent guided installer.
 
 [Español](README.es.md) · [Security](SECURITY.md) · [Design](docs/superpowers/specs/2026-07-18-easy-devops-v1-design.md)
@@ -13,6 +17,15 @@ Easy DevOps is an educational, security-conscious path from an empty machine to 
 | Windows local | Windows 11, WSL2, Linux containers | Portainer at `http://portainer.localhost` |
 | Linux local | Ubuntu 22.04 or 24.04 | Portainer at `http://portainer.localhost` |
 | Linux server | Ubuntu Server 22.04 or 24.04 | Portainer on your domain with Let's Encrypt HTTPS |
+
+### Complete guides
+
+- [Windows 11 local: from zero to Portainer](docs/en/windows-local.md)
+- [Ubuntu local: Docker Engine and a one-node Swarm](docs/en/linux-local.md)
+- [Ubuntu Server: DNS, firewall, Traefik and HTTPS](docs/en/linux-server.md)
+- [Architecture and security boundaries](docs/en/architecture.md)
+- [Troubleshooting guide](docs/en/troubleshooting.md)
+- [Release acceptance checklist](docs/testing.md)
 
 This project targets learning, development, home labs, and small self-hosted environments. The v1 architecture is single-manager and is not advertised as a production high-availability cluster.
 
